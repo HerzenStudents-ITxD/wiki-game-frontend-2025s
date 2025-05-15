@@ -3,7 +3,7 @@ import * as React from 'react';
 //import Button from '@mui/material/Button';
 import { TextField, Button, Container, Typography, Paper, Box } from '@mui/material';
 //import './App.css';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import { Layout } from './Layout';
 
 import { Home } from './pages/Home';
@@ -18,7 +18,7 @@ import { Location } from './pages/Location';
 function App() {
 
   return (
-    <Router>
+    <BrowserRouter basename="/wiki-guide">
       <Routes>
         <Route element={<Layout/>}>
           <Route path="/" element={<Home/>} />
@@ -31,7 +31,7 @@ function App() {
           <Route path="/item" element={<Item/>} />
         </Route>
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
   
 }
